@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#17291f">
+  <title>Mandevu at Kwa Nyuki | Plants for Everyday Living</title>
+  <meta name="description" content="Discover houseplants and simple plant-care guidance from Mandevu at Kwa Nyuki in Nairobi, Kenya. Contact us to confirm current plants, prices and collection details.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Mandevu at Kwa Nyuki | Plants for Everyday Living">
+  <meta property="og:description" content="Bring home something living. Explore houseplants and practical care guidance from Mandevu at Kwa Nyuki.">
+  <meta name="color-scheme" content="light">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --night:#17291f;--forest:#244333;--moss:#647d5d;--sage:#b6c5aa;
+      --paper:#f2efe5;--cream:#fcfaf4;--gold:#c9a86b;--clay:#a86143;
+      --ink:#20291f;--muted:#687164;--line:rgba(242,239,229,.18);
+      --darkline:#d9d8ca;--serif:"Playfair Display",Georgia,serif;
+      --sans:"DM Sans",system-ui,sans-serif;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:88px}
+    body{margin:0;background:var(--paper);color:var(--ink);font:400 16px/1.7 var(--sans);-webkit-font-smoothing:antialiased}
+    body.menu-open{overflow:hidden}
+    a{color:inherit;text-decoration:none}
+    button{font:inherit}
+    a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offset:4px}
+    .wrap{width:min(1160px,calc(100% - 48px));margin-inline:auto}
+    .eyebrow{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--clay)}
+    .serif{font-family:var(--serif)}
+    .muted{color:var(--muted)}
+    .section{padding:96px 0}
+    .section-head{max-width:730px;margin-bottom:38px}
+    .section-head h2{font:400 clamp(2.2rem,5vw,4rem)/1.08 var(--serif);letter-spacing:-.035em;margin:12px 0 16px}
+    .section-head p{max-width:650px;color:var(--muted);margin:0}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:49px;padding:12px 20px;border:1px solid var(--gold);background:var(--gold);color:var(--night);font-size:.85rem;font-weight:700;transition:transform .2s,background .2s}
+    .btn:hover{transform:translateY(-2px);background:#d8bc85}
+    .btn-dark{background:var(--forest);border-color:var(--forest);color:var(--cream)}
+    .btn-dark:hover{background:var(--night);color:var(--cream)}
+    .btn-outline{background:transparent;border-color:rgba(252,250,244,.55);color:var(--cream)}
+    .btn-outline:hover{background:var(--cream);color:var(--night)}
+    .topline{background:#0e1a13;color:#d5ddcf;padding:8px 0;font-size:.7rem;letter-spacing:.09em;text-transform:uppercase}
+    .topline .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+    .nav{position:sticky;top:0;z-index:10;background:rgba(23,41,31,.97);color:var(--cream);border-bottom:1px solid rgba(255,255,255,.08);backdrop-filter:blur(14px)}
+    .nav-inner{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:flex;align-items:center;gap:10px;white-space:nowrap}
+    .brand-mark{width:35px;height:35px;display:grid;place-items:center;border:1px solid rgba(201,168,107,.65);border-radius:50%;color:var(--gold);font-size:1.15rem}
+    .brand-name{font:500 1.25rem/1.12 var(--serif);letter-spacing:-.025em}
+    .brand-name small{display:block;color:var(--gold);font:500 .64rem/1.5 var(--sans);letter-spacing:.11em;text-transform:uppercase}
+    .nav-links{display:flex;align-items:center;gap:clamp(14px,2.5vw,30px)}
+    .nav-links a{font-size:.8rem;color:#d8dfd2;white-space:nowrap}
+    .nav-links a:hover{color:var(--gold)}
+    .menu-btn{display:none;border:1px solid var(--line);background:transparent;color:var(--cream);padding:8px 12px;cursor:pointer}
+    .hero{min-height:650px;display:flex;align-items:center;background:var(--night);color:var(--cream);overflow:hidden;position:relative}
+    .hero:before{content:"";position:absolute;width:620px;height:620px;border-radius:50%;right:-180px;top:-170px;background:radial-gradient(circle,rgba(111,143,91,.32),rgba(111,143,91,0) 68%);pointer-events:none}
+    .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center;padding-top:68px;padding-bottom:68px;position:relative;z-index:1}
+    .hero-copy{max-width:640px}
+    .hero-copy .eyebrow{color:var(--gold)}
+    .hero h1{font:400 clamp(3.1rem,7vw,6.4rem)/.99 var(--serif);letter-spacing:-.055em;margin:22px 0}
+    .hero h1 em{font-weight:400;color:#d9c18f}
+    .hero-lead{max-width:540px;color:#dce3d6;font-size:1.04rem}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+    .hero-points{display:flex;gap:20px 26px;flex-wrap:wrap;margin-top:43px;padding-top:18px;border-top:1px solid var(--line);font-size:.78rem;color:#ced8c8}
+    .hero-points span:before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--gold);margin-right:9px;vertical-align:2px}
+    .hero-art{min-height:470px;position:relative;border:1px solid rgba(201,168,107,.38);background:linear-gradient(145deg,#314f3b,#182b20 72%);overflow:hidden;display:grid;place-items:center}
+    .hero-art:before{content:"";position:absolute;inset:15px;border:1px solid rgba(245,239,221,.18);pointer-events:none;z-index:2}
+    .art-label{position:absolute;z-index:3;left:28px;bottom:27px;color:#f4efdf;font-size:.72rem;letter-spacing:.13em;text-transform:uppercase}
+    .hero-plant{width:min(100%,480px);height:auto;filter:drop-shadow(0 20px 30px rgba(0,0,0,.2))}
+    .intro{background:var(--cream)}
+    .intro-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(34px,8vw,110px);align-items:start}
+    .intro-title{font:400 clamp(2.1rem,4.2vw,3.45rem)/1.12 var(--serif);margin:12px 0}
+    .intro-copy p{margin:0 0 16px;color:var(--muted)}
+    .signature{font:italic 1.25rem var(--serif);color:var(--forest);margin-top:24px}
+    .plants{background:#e6e8dc}
+    .plant-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+    .plant-card{background:var(--cream);border:1px solid #d6dbce;display:flex;flex-direction:column;min-width:0}
+    .plant-art{height:250px;position:relative;overflow:hidden;display:grid;place-items:center;background:linear-gradient(145deg,#ced9c4,#f0eee2)}
+    .plant-art svg{height:100%;width:100%;max-width:420px}
+    .plant-content{padding:25px;display:flex;flex:1;flex-direction:column;align-items:flex-start}
+    .plant-card h3{font:500 1.65rem/1.2 var(--serif);margin:0 0 2px}
+    .latin{font-size:.82rem;font-style:italic;color:var(--muted)}
+    .tag-price{display:inline-block;margin:14px 0 10px;background:var(--forest);color:var(--cream);padding:5px 11px;font-size:.82rem;font-weight:600}
+    .plant-card p{font-size:.9rem;color:var(--muted);margin:0 0 18px}
+    .plant-card .btn{margin-top:auto}
+    .disclaimer{font-size:.78rem;color:#5f685a;margin-top:22px;max-width:850px}
+    .care{background:var(--cream)}
+    .care-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;border:1px solid #d9d9cc;background:#d9d9cc}
+    .care-card{background:var(--cream);padding:27px}
+    .care-num{font:italic 1.4rem var(--serif);color:var(--clay)}
+    .care-card h3{font:500 1.3rem/1.2 var(--serif);margin:10px 0}
+    .care-card p{margin:0;color:var(--muted);font-size:.9rem}
+    .visit{background:#e9e4d6}
+    .visit-grid{display:grid;grid-template-columns:1fr .88fr;gap:50px;align-items:start}
+    .visit h2{font:400 clamp(2.4rem,4.8vw,4rem)/1.06 var(--serif);margin:12px 0 18px}
+    .visit-copy p{color:#596354}
+    .location-box{padding:28px;background:var(--forest);color:var(--cream)}
+    .location-box h3{font:400 1.65rem/1.2 var(--serif);margin:0 0 12px}
+    .location-box p{color:#d4ddcf;font-size:.91rem;margin:9px 0}
+    .location-box strong{color:#fff8e7}
+    .phone-list{display:grid;gap:8px;margin:18px 0}
+    .phone-list a{color:var(--gold);text-decoration:underline;text-underline-offset:3px;font-weight:600}
+    .location-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
+    .map{display:block;width:100%;height:255px;border:0;background:#dce3d4;margin-top:22px}
+    .location-note{font-size:.75rem!important;color:#bbc9b7!important;margin-top:17px!important}
+    .contact-band{background:var(--night);color:var(--cream);padding:54px 0}
+    .contact-row{display:flex;align-items:center;justify-content:space-between;gap:26px}
+    .contact-row h2{font:400 clamp(1.9rem,3.5vw,2.8rem)/1.12 var(--serif);margin:8px 0}
+    .contact-row p{color:#cbd5c6;margin:0;max-width:590px;font-size:.92rem}
+    .footer{background:#0c1710;color:#c1ccbd;padding:24px 0;font-size:.78rem}
+    .footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap}
+    .footer-brand{font:500 1.15rem var(--serif);color:var(--cream)}
+    .footer-brand em{color:var(--gold)}
+    .footer-note{max-width:620px;color:#aeb9a9}
+    .reveal{opacity:0;transform:translateY(15px);transition:opacity .65s ease,transform .65s ease}
+    .reveal.in{opacity:1;transform:none}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
+    @media(max-width:900px){.hero-grid{gap:25px}.hero-art{min-height:420px}.nav-links{gap:14px}.nav-links a{font-size:.74rem}.visit-grid{gap:28px}}
+    @media(max-width:740px){.wrap{width:min(100% - 34px,1160px)}.topline .wrap{justify-content:center;text-align:center}.nav-inner{min-height:68px}.menu-btn{display:block}.nav-links{display:none;position:absolute;top:68px;left:0;right:0;padding:18px 24px 24px;background:var(--night);border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start;gap:16px}.nav-links.open{display:flex}.nav-links a{font-size:.95rem}.hero-grid{grid-template-columns:1fr;padding-top:54px;padding-bottom:52px}.hero{min-height:auto}.hero-art{min-height:390px}.hero h1{font-size:clamp(3.1rem,13vw,5.4rem)}.section{padding:70px 0}.intro-grid,.visit-grid{grid-template-columns:1fr;gap:23px}.plant-grid{grid-template-columns:1fr}.plant-art{height:280px}.care-grid{grid-template-columns:1fr}.care-card{padding:23px}.contact-row{align-items:flex-start;flex-direction:column}.map{height:245px}}
+    @media(max-width:420px){.hero-actions .btn,.location-actions .btn{width:100%}.hero-art{min-height:320px}.hero-points{gap:12px}.plant-content{padding:21px}.location-box{padding:22px}}
+  </style>
+</head>
+<body>
+  <div class="topline"><div class="wrap"><span>Plants for everyday living</span><span>Rooted in Nairobi · Growing with care</span></div></div>
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#home" aria-label="Mandevu at Kwa Nyuki home">
+        <span class="brand-mark" aria-hidden="true">❧</span>
+        <span class="brand-name">Mandevu<small>at Kwa Nyuki</small></span>
+      </a>
+      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+        <a href="#plants">Plants</a><a href="#care">Plant care</a><a href="#visit">Find us</a><a href="#contact">Contact</a>
+      </nav>
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navLinks">Menu ☰</button>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">A little more green, every day</div>
+          <h1>Bring home<br>something <em>living.</em></h1>
+          <p class="hero-lead">Discover houseplants that bring character to your space. Whether you are starting a collection or choosing a green gift, we can help you ask the right questions about light, watering and care.</p>
+          <div class="hero-actions"><a class="btn" href="#plants">Explore the plants ↓</a><a class="btn btn-outline" href="#visit">Find Mandevu ↗</a></div>
+          <div class="hero-points"><span>Houseplants</span><span>Simple care guidance</span><span>Nairobi, Kenya</span></div>
+        </div>
+        <div class="hero-art" aria-label="Decorative botanical illustration">
+          <svg class="hero-plant" viewBox="0 0 500 560" role="img" aria-labelledby="heroPlantTitle">
+            <title id="heroPlantTitle">Illustration of a leafy potted plant</title>
+            <defs>
+              <linearGradient id="pot" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#d5b987"/><stop offset="1" stop-color="#916d45"/></linearGradient>
+              <linearGradient id="leaf" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#a6bd83"/><stop offset="1" stop-color="#456d4c"/></linearGradient>
+              <linearGradient id="leafDark" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#789b68"/><stop offset="1" stop-color="#264a35"/></linearGradient>
+            </defs>
+            <ellipse cx="252" cy="503" rx="150" ry="20" fill="#101d15" opacity=".32"/>
+            <g fill="none" stroke="#b7c69a" stroke-width="5" stroke-linecap="round">
+              <path d="M248 420 Q230 300 148 180"/><path d="M254 426 Q280 285 350 165"/><path d="M250 415 Q246 245 245 115"/><path d="M245 420 Q165 335 105 300"/><path d="M260 422 Q345 345 400 290"/>
+            </g>
+            <g fill="url(#leaf)">
+              <path d="M148 183 C73 185 55 125 71 71 C128 83 167 125 148 183Z"/>
+              <path d="M350 167 C416 145 431 89 407 44 C351 66 321 116 350 167Z"/>
+              <path d="M245 120 C190 72 206 22 247 8 C287 45 285 86 245 120Z"/>
+              <path d="M107 303 C42 298 22 250 40 207 C92 215 122 254 107 303Z"/>
+              <path d="M398 293 C461 273 473 222 447 184 C397 207 373 251 398 293Z"/>
+            </g>
+            <g fill="url(#leafDark)">
+              <path d="M190 276 C120 267 104 214 129 171 C185 193 210 232 190 276Z"/>
+              <path d="M293 283 C349 244 344 187 307 156 C266 196 263 244 293 283Z"/>
+              <path d="M246 224 C198 184 211 140 247 120 C281 154 281 193 246 224Z"/>
+              <path d="M174 365 C112 352 101 302 128 270 C177 290 196 330 174 365Z"/>
+              <path d="M326 365 C389 344 397 295 369 265 C320 287 304 330 326 365Z"/>
+            </g>
+            <g stroke="#d2dfb4" stroke-width="2" opacity=".65" fill="none">
+              <path d="M148 183 L91 91 M350 167 L399 62 M245 120 L247 24 M107 303 L51 220 M398 293 L453 197 M190 276 L143 185 M293 283 L315 171 M246 224 L247 131 M174 365 L141 284 M326 365 L365 279"/>
+            </g>
+            <path d="M161 401 L339 401 L318 493 Q250 515 182 493Z" fill="url(#pot)"/>
+            <ellipse cx="250" cy="402" rx="89" ry="19" fill="#d9c59e"/>
+            <ellipse cx="250" cy="402" rx="74" ry="12" fill="#423a27"/>
+            <path d="M175 420 Q250 439 325 420" fill="none" stroke="#f0d5a7" stroke-opacity=".42" stroke-width="3"/>
+          </svg>
+          <div class="art-label">A greener corner starts here</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section intro" aria-labelledby="intro-heading">
+      <div class="wrap intro-grid">
+        <div><div class="eyebrow">The Mandevu approach</div><h2 class="intro-title" id="intro-heading">Good plants.<br><em>Practical care.</em></h2></div>
+        <div class="intro-copy"><p>A plant should suit the space and the person looking after it. Start with the light your room receives, the time you have for watering and a pot that allows excess water to drain.</p><p>Our plant information is here to make choosing easier. Ask about current stock, the size of the plant, pot options and the care it needs before making your choice.</p><div class="signature">Make room for something living.</div></div>
+      </div>
+    </section>
+
+    <section class="section plants" id="plants" aria-labelledby="plants-heading">
+      <div class="wrap">
+        <div class="section-head reveal"><div class="eyebrow">The plant collection</div><h2 id="plants-heading">Find a plant for your space.</h2><p>Explore the plants listed here, then contact us to confirm availability, size and current price before visiting or ordering.</p></div>
+        <div class="plant-grid">
+          <article class="plant-card reveal">
+            <div class="plant-art" aria-hidden="true">
+              <svg viewBox="0 0 420 280">
+                <defs><linearGradient id="snakePot" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#c7a571"/><stop offset="1" stop-color="#8b6544"/></linearGradient><linearGradient id="snakeLeaf" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#6e915d"/><stop offset="1" stop-color="#173b2c"/></linearGradient></defs>
+                <ellipse cx="210" cy="252" rx="82" ry="10" fill="#66735d" opacity=".2"/>
+                <g stroke="#d5d8b0" stroke-width="2" opacity=".75" fill="none"><path d="M179 205 Q164 107 155 34"/><path d="M192 204 Q194 105 203 24"/><path d="M207 204 Q220 104 249 45"/><path d="M221 206 Q251 135 281 76"/><path d="M168 207 Q132 129 116 79"/></g>
+                <g fill="url(#snakeLeaf)" stroke="#d0d8a3" stroke-width="1.4"><path d="M179 207 Q138 108 154 26 Q185 80 191 166Z"/><path d="M191 208 Q172 85 204 19 Q222 91 207 176Z"/><path d="M204 207 Q203 100 251 39 Q259 116 222 183Z"/><path d="M216 207 Q239 118 284 69 Q279 143 230 190Z"/><path d="M169 209 Q116 151 114 76 Q155 118 184 181Z"/></g>
+                <path d="M151 204 L269 204 L255 255 Q210 267 165 255Z" fill="url(#snakePot)"/><ellipse cx="210" cy="204" rx="59" ry="12" fill="#dfc69d"/><ellipse cx="210" cy="204" rx="49" ry="8" fill="#3a3022"/>
+              </svg>
+            </div>
+            <div class="plant-content"><h3>Snake plant</h3><div class="latin">Dracaena trifasciata</div><span class="tag-price">KSh 250 · listed price</span><p>Upright, architectural leaves. Allow the soil to dry between waterings and use a free-draining potting mix.</p><a class="btn btn-dark" href="tel:+254722204997">Ask about this plant ↗</a></div>
+          </article>
+          <article class="plant-card reveal">
+            <div class="plant-art" aria-hidden="true">
+              <svg viewBox="0 0 420 280">
+                <defs><linearGradient id="spiderPot" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#c6a576"/><stop offset="1" stop-color="#8a684c"/></linearGradient><linearGradient id="spiderLeaf" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#91ad73"/><stop offset="1" stop-color="#365b3c"/></linearGradient></defs>
+                <ellipse cx="210" cy="252" rx="83" ry="10" fill="#66735d" opacity=".2"/>
+                <g fill="none" stroke="#6f945b" stroke-width="3" stroke-linecap="round"><path d="M207 211 Q178 146 143 93"/><path d="M207 210 Q202 128 205 49"/><path d="M210 211 Q240 127 286 89"/><path d="M211 212 Q260 166 312 148"/><path d="M205 212 Q148 174 105 153"/><path d="M211 211 Q185 113 164 63"/><path d="M214 211 Q229 151 242 65"/></g>
+                <g fill="url(#spiderLeaf)" stroke="#d5dfb5" stroke-width="1"><path d="M143 95 Q93 85 75 36 Q126 45 143 95Z"/><path d="M205 52 Q169 28 190 7 Q218 22 205 52Z"/><path d="M286 90 Q283 37 324 27 Q321 68 286 90Z"/><path d="M311 149 Q329 101 367 116 Q347 145 311 149Z"/><path d="M106 154 Q57 148 48 111 Q90 117 106 154Z"/><path d="M164 66 Q126 44 139 20 Q168 37 164 66Z"/><path d="M243 68 Q227 24 254 10 Q273 39 243 68Z"/></g>
+                <path d="M152 203 L268 203 L254 255 Q210 267 166 255Z" fill="url(#spiderPot)"/><ellipse cx="210" cy="203" rx="58" ry="12" fill="#dec69e"/><ellipse cx="210" cy="203" rx="49" ry="8" fill="#453726"/>
+              </svg>
+            </div>
+            <div class="plant-content"><h3>Spider plant</h3><div class="latin">Chlorophytum comosum</div><span class="tag-price">KSh 500 · listed price</span><p>Arching foliage with a relaxed, informal look. Prefers bright indirect light and soil that is lightly moist, not waterlogged.</p><a class="btn btn-dark" href="tel:+254722204997">Ask about this plant ↗</a></div>
+          </article>
+        </div>
+        <p class="disclaimer">The prices above were carried over from the supplied page. They are indicative listings, not confirmed live prices. Stock, plant sizes and pot options may vary; please check before travelling or placing an order.</p>
+      </div>
+    </section>
+
+    <section class="section care" id="care" aria-labelledby="care-heading">
+      <div class="wrap">
+        <div class="section-head reveal"><div class="eyebrow">A few care basics</div><h2 id="care-heading">Start with the conditions.</h2><p>Small checks help you choose a plant that suits your space. Care needs differ by plant, season and growing conditions, so use these points as a starting place.</p></div>
+        <div class="care-grid">
+          <article class="care-card reveal"><div class="care-num">01</div><h3>Notice the light</h3><p>Check whether the room gets direct sunlight, bright indirect light or shade. Match your choice to the space you have.</p></article>
+          <article class="care-card reveal"><div class="care-num">02</div><h3>Check before watering</h3><p>Feel the soil before adding water. Pot size, temperature and season affect how quickly it dries.</p></article>
+          <article class="care-card reveal"><div class="care-num">03</div><h3>Let excess water drain</h3><p>Choose a pot with drainage and a suitable potting mix. Avoid leaving the roots sitting in standing water.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section visit" id="visit" aria-labelledby="visit-heading">
+      <div class="wrap visit-grid">
+        <div class="visit-copy reveal"><div class="eyebrow">Find the plant-sales point</div><h2 id="visit-heading">Make a plan to visit.</h2><p>The supplied plant poster describes the location as Ngina Road, Nairobi: about 500 metres from Sidian Bank and 100 metres before Samwest, on the road to the SDA church.</p><p>Before setting out, please call to confirm the exact location, opening arrangements and current availability.</p><div class="location-actions"><a class="btn btn-dark" href="https://www.google.com/maps/dir/?api=1&amp;destination=-1.2855157%2C36.7341185" target="_blank" rel="noopener noreferrer">Get directions ↗</a><a class="btn" href="https://www.google.com/maps?q=-1.2855157%2C36.7341185" target="_blank" rel="noopener noreferrer">View map pin ↗</a></div></div>
+        <aside class="location-box reveal" aria-label="Mandevu contact details"><h3>Plant enquiries</h3><p>For current stock, plant sizes, prices and collection details, contact the numbers listed on the supplied poster.</p><div class="phone-list"><a href="tel:+254722204997">+254 722 204 997 ↗</a><a href="tel:+254727149757">+254 727 149 757 ↗</a></div><p>When calling, mention which plant you are interested in and ask whether it is currently available.</p><iframe class="map" title="Map for the coordinates supplied with the Mandevu plant poster" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=-1.2855157%2C36.7341185&amp;output=embed"></iframe><p class="location-note">The map pin and directions come from the supplied poster. Please confirm that they identify the correct Mandevu sales point before travelling.</p></aside>
+      </div>
+    </section>
+
+    <section class="contact-band" id="contact"><div class="wrap contact-row"><div><div class="eyebrow">A simple conversation</div><h2>Tell us what you are looking for.</h2><p>Ask about a plant, its care requirements or what is available today. Please reconfirm listed prices and location details before arranging collection.</p></div><div class="hero-actions"><a class="btn" href="tel:+254722204997">Call Mandevu ↗</a><a class="btn btn-outline" href="tel:+254727149757">Call alternate number ↗</a></div></div></section>
+  </main>
+
+  <footer class="footer"><div class="wrap"><div><div class="footer-brand">Mandevu <em>at Kwa Nyuki</em></div><div>Plants for everyday living · Nairobi, Kenya</div></div><div class="footer-note">Listed prices, stock and location information should be confirmed directly before ordering or travelling.</div><div>© <span id="year">2026</span> Mandevu</div></div></footer>
+
+  <script>
+    (() => {
+      const menuBtn = document.getElementById('menuBtn');
+      const navLinks = document.getElementById('navLinks');
+      if (menuBtn && navLinks) {
+        menuBtn.addEventListener('click', () => {
+          const open = navLinks.classList.toggle('open');
+          menuBtn.setAttribute('aria-expanded', String(open));
+          menuBtn.textContent = open ? 'Close ×' : 'Menu ☰';
+          document.body.classList.toggle('menu-open', open);
+        });
+        navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+          navLinks.classList.remove('open');
+          menuBtn.setAttribute('aria-expanded', 'false');
+          menuBtn.textContent = 'Menu ☰';
+          document.body.classList.remove('menu-open');
+        }));
+      }
+      const year = document.getElementById('year');
+      if (year) year.textContent = String(new Date().getFullYear());
+      const items = document.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        const observer = new IntersectionObserver(entries => entries.forEach(entry => {
+          if (entry.isIntersecting) { entry.target.classList.add('in'); observer.unobserve(entry.target); }
+        }), { threshold: 0.12 });
+        items.forEach(item => observer.observe(item));
+      } else items.forEach(item => item.classList.add('in'));
+    })();
+  </script>
+</body>
+</html>
