@@ -1,34 +1,66 @@
 (() => {
-  const menuBtn = document.getElementById('menuBtn');
-  const navLinks = document.getElementById('navLinks');
+  'use strict';
+  const $ = (sel, root = document) => root.querySelector(sel);
+  const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Mobile menu */
+  const menuBtn = $('#menuBtn'), navLinks = $('#navLinks');
+  const setMenu = open => {
+    navLinks.classList.toggle('open', open);
+    menuBtn.setAttribute('aria-expanded', String(open));
+    menuBtn.textContent = open ? 'Close ×' : 'Menu ☰';
+    document.body.classList.toggle('menu-open', open);
+  };
   if (menuBtn && navLinks) {
-    menuBtn.addEventListener('click', () => {
-      const open = navLinks.classList.toggle('open');
-      menuBtn.setAttribute('aria-expanded', String(open));
-      menuBtn.textContent = open ? 'Close ×' : 'Menu ☰';
-      document.body.classList.toggle('menu-open', open);
+    menuBtn.addEventListener('click', () => setMenu(!navLinks.classList.contains('open')));
+    $$('a', navLinks).forEach(a => a.addEventListener('click', () => setMenu(false)));
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && navLinks.classList.contains('open')) { setMenu(false); menuBtn.focus(); }
     });
-    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
-      navLinks.classList.remove('open');
-      menuBtn.setAttribute('aria-expanded', 'false');
-      menuBtn.textContent = 'Menu ☰';
-      document.body.classList.remove('menu-open');
-    }));
+    window.matchMedia('(min-width: 741px)').addEventListener('change', e => { if (e.matches) setMenu(false); });
   }
-  const year = document.getElementById('year');
+
+  /* Header shadow once scrolled */
+  const nav = $('.nav');
+  const onScroll = () => nav && nav.classList.toggle('scrolled', window.scrollY > 8);
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  /* Footer year */
+  const year = $('#year');
   if (year) year.textContent = String(new Date().getFullYear());
-  const items = document.querySelectorAll('.reveal');
-  if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    const observer = new IntersectionObserver(entries => entries.forEach(entry => {
-      if (entry.isIntersecting) { entry.target.classList.add('in'); observer.unobserve(entry.target); }
+
+  /* Reveal on scroll */
+  const items = $$('.reveal');
+  if ('IntersectionObserver' in window && !reduce) {
+    const io = new IntersectionObserver(entries => entries.forEach(en => {
+      if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
     }), { threshold: 0.12 });
-    items.forEach(item => observer.observe(item));
-  } else items.forEach(item => item.classList.add('in'));
-  const toggle = document.getElementById('onlyObserved');
-  if (toggle) toggle.addEventListener('click', () => {
-    const on = toggle.getAttribute('aria-pressed') !== 'true';
-    toggle.setAttribute('aria-pressed', String(on));
-    toggle.textContent = on ? 'Showing observed only' : 'Show observed only';
-    document.querySelectorAll('.el[data-status="asserted"]').forEach(el => el.classList.toggle('hidden', on));
-  });
+    items.forEach(i => io.observe(i));
+  } else items.forEach(i => i.classList.add('in'));
+
+  /* Highlight the nav link for the section in view */
+  const links = $$('a[href^="#"]', navLinks || document);
+  const targets = links.map(a => $(a.getAttribute('href'))).filter(Boolean);
+  if ('IntersectionObserver' in window && targets.length) {
+    const spy = new IntersectionObserver(entries => entries.forEach(en => {
+      if (!en.isIntersecting) return;
+      links.forEach(a => a.setAttribute('aria-current', String(a.getAttribute('href') === '#' + en.target.id)));
+    }), { rootMargin: '-45% 0px -50% 0px' });
+    targets.forEach(t => spy.observe(t));
+  }
+
+  /* Load the Google map only when asked (faster page, no third-party request until then) */
+  const mapBtn = $('#loadMap'), mapWrap = $('#mapWrap');
+  if (mapBtn && mapWrap) {
+    mapBtn.addEventListener('click', () => {
+      const f = document.createElement('iframe');
+      f.className = 'map';
+      f.title = 'Map showing the Mandevu plant-sales point, Ngina Road, Nairobi';
+      f.referrerPolicy = 'no-referrer-when-downgrade';
+      f.src = mapWrap.dataset.src;
+      mapWrap.replaceChildren(f);
+    });
+  }
 })();
